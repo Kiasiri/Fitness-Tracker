@@ -21,6 +21,8 @@ Clone repo and npm install and init.
 ## Usage
 User is presented with a menu where they select cardio or resistance. THen they can enter different parameters for each exercise and add them or mark them as complete. 
 
+## Link
+[Deployed Application](https://calm-scrubland-45898.herokuapp.com/)
 
 ## License
 
