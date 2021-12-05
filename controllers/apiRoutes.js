@@ -12,34 +12,6 @@ router.get("/workouts", (req, res) => {
   console.log("GET WORKOUT WORKING");
 });
 
-router.post("/workouts", ({ body }, res) => {
-  Workout.create({ body })
-    .then((dbWorkOut) => {
-      res.json(dbWorkOut);
-    })
-    .catch(({ err }) => {
-      console.log(err);
-    });
-  console.log("POST WORKOUT  WORKING");
-});
-
-router.put("/workouts/:id", ({ params, body }, res) => {
-  console.log("Parameters: ", body, params);
-
-  Workout.findByIdAndUpdate(
-    { _id: params.id },
-    { $push: { exercises: body } },
-    { new: true }
-  )
-    .then((dbWorkOut) => {
-      res.json(dbWorkOut);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
-  console.log("PUT WORKOUT ");
-});
-
 router.get("/workouts/range", (req, res) => {
   Workout.aggregate([
     {
